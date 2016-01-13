@@ -38,6 +38,7 @@ Compilador é um programa que transforma um código-fonte escrito em uma linguag
 ###Interpreters
 
 In computer science, an interpreter is a computer program that directly executes, i.e. performs, instructions written in a programming or scripting language, without previously compiling them into a machine language program. An interpreter generally uses one of the following strategies for program execution:
+
 [Interpreter](https://en.wikipedia.org/wiki/Interpreter_(computing))
 
 ###Syntax
