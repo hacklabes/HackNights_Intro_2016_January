@@ -29,8 +29,6 @@ In general, a text file with a collection of instructions written using some hum
 
 ###Compiler
 
-Compilador é um programa que transforma um código-fonte escrito em uma linguagem de programação em algo executável pelo seu hardware CPU.
-
 "A compiler is a computer program that transforms source code written in a programming language into another computer language. The most common reason for converting source code is to create an executable program. "
 
 [Compiler](https://en.wikipedia.org/wiki/Compiler)
@@ -62,23 +60,15 @@ The process of finding and resolving bugs or defects that prevent correct operat
 Comments:
 ```js
 // Comments
-// duas barras para direita definem um comentário por linha
-// então, essa sequência de instruções será ignorada pelo
-// compilador
+// 
 
-
-/* 
+/* Block Comments within /* */ 
 
 
 */
 
 ```
 ###Functions:
-
-Funções serão vastamente utilizadas na programação com o processing,
-elas permitem que você desenho formas, defina cores, calcule números, e execute muitos outros tipos de ações. Uma função normalmente é uma palavra seguida de parêntesis, algumas vezes virgulas separam parâmetros dentro dos parêntesis.
-
-Definição de um função
 
 ```js
 function();
@@ -87,9 +77,6 @@ function(parmameter1,parameter2,parameter3);
 ```
 
 ###Expressions  
-
-
-
 
 
 ##Tutorials
