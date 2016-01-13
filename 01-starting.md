@@ -38,7 +38,6 @@ Compilador é um programa que transforma um código-fonte escrito em uma linguag
 ###Interpreters
 
 In computer science, an interpreter is a computer program that directly executes, i.e. performs, instructions written in a programming or scripting language, without previously compiling them into a machine language program. An interpreter generally uses one of the following strategies for program execution:
-
 [Interpreter](https://en.wikipedia.org/wiki/Interpreter_(computing))
 
 ###Syntax
@@ -52,3 +51,49 @@ In computer science, an interpreter is a computer program that directly executes
 The process of finding and resolving bugs or defects that prevent correct operation of computer software"
 
 [Debugging](https://en.wikipedia.org/wiki/Debugging)
+
+
+##P5.js
+[Reference](http://p5js.org/reference/)
+
+
+###Syntaxe:
+
+Comments:
+```js
+// Comments
+// duas barras para direita definem um comentário por linha
+// então, essa sequência de instruções será ignorada pelo
+// compilador
+
+
+/* 
+
+
+*/
+
+```
+###Functions:
+
+Funções serão vastamente utilizadas na programação com o processing,
+elas permitem que você desenho formas, defina cores, calcule números, e execute muitos outros tipos de ações. Uma função normalmente é uma palavra seguida de parêntesis, algumas vezes virgulas separam parâmetros dentro dos parêntesis.
+
+Definição de um função
+
+```js
+function();
+function(parmameter1,parameter2);
+function(parmameter1,parameter2,parameter3);
+```
+
+###Expressions  
+
+
+
+
+
+##Tutorials
+
+[Coordinate System and Shapes](https://processing.org/tutorials/drawing/)
+
+[Colors](https://processing.org/tutorials/color/)
