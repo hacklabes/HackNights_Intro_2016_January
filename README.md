@@ -1,3 +1,14 @@
+#How to Start
+
+We are using the amazing [P5.js library](http://p5js.org/reference/) written in JavaScript, and in order to start learning to code you will just need a text editor and your best web browser.
+
+1. Install [Brackets](http://brackets.io/) or your preferred text editor
+2. Download the ZIP file of this repository [here](https://github.com/hacklabes/HackNights_Intro_2016_January/archive/master.zip)
+3. Decompress the ZIP on your favorite folder.
+4. Open the main folder with the text editor then start exploring the **sketch.js** files
+5. Click on th **Live Preview button** to see your sketch running 
+
+
 #Computer Programming
 
 ##Starting
