@@ -8,7 +8,7 @@ We are using the amazing [P5.js library](http://p5js.org/reference/) written in 
 4. Open the main folder with the text editor then start exploring the **sketch.js** files
 5. Click on th **Live Preview button** to see your sketch running 
 
-Keep your new sketchs organized in folders, you can always duplicate the template folder and rename with the name of your sketch
+Keep your new sketchs organized in folders, you can always duplicate the **00-template** folder and rename with the name of your sketch
 
 
 #Computer Programming
