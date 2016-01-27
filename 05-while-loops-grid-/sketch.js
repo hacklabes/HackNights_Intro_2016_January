@@ -11,21 +11,26 @@ function draw() {
 	//backgroud(RED,GREEN,BLUE)
   	background(255,255,255); //background color WHITE
 	
-	var count = 0;
-	while(count < mouseX){
-		drawFace(count, 100,  45, 1, 'blue');
-		count = count + 50;
+	var size = 10;
+	var stepX = width/size; 
+	var stepY = height/size; 
+	var countX = 0;
+	while(countX < width){
+			var countY = 0;
+			while(countY < height){
+				drawFace(countX, countY, stepX, 0, 'blue');
+				countY = countY + stepY;
+			}
+			countX = countX + stepX;
 	}
-	
-  
 }
 
 
 
-function drawFace(posX, posY, angle, scaleNum, colorName){
+function drawFace(posX, posY,faceWidth, angle, colorName){
 	push(); //push save the syles and the coordinates state
 		//head
-	
+		var scaleNum = faceWidth/100;
 		translate(posX,posY);
 		scale( scaleNum );
 		rotate( radians(angle) );
