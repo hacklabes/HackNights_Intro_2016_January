@@ -10,11 +10,11 @@ function setup() {
 function draw() {
 	//backgroud(RED,GREEN,BLUE)
   	background(255,255,255); //background color WHITE
-	drawGrid(0,0,0,255);
+	drawGrid(0,0,0,1,255);
 }
 
 
-function drawGrid(posX, posY, angle, color){
+function drawGrid(posX, posY, angle, vScale, color){
 	var size = 10; //grid size
 	var stepX = width/size; //step for X
 	var stepY = height/size;  //step for Y
@@ -28,7 +28,7 @@ function drawGrid(posX, posY, angle, color){
 	push(); //push save the syles and the coordinates state
 		translate(posX,posY);
 		rotate(radians(angle));
-		
+		scale(vScale);
 		var x = 0;
 		strokeWeight(2);
 		while(x <= width){
