@@ -10,33 +10,28 @@ function setup() {
 function draw() {
 	//backgroud(RED,GREEN,BLUE)
   	background(255,255,255); //background color WHITE
+	var colors = ['red', 'green', color(100,200,100), color(50,100,50), 'blue', 'violet'];
 	
-	var size = 10;
-	var stepX = width/size; 
-	var stepY = height/size; 
-	var countX = 0;
-	while(countX < width){
-			var countY = 0;
-			while(countY < height){
-				drawFace(countX, countY, stepX, 0, 'blue');
-				countY = countY + stepY;
-			}
-			countX = countX + stepX;
+	for(var colorIndex in colors){
+		drawFace(colorIndex * 100, 100,  45, 1, colors[colorIndex]);
 	}
+	
+  
 }
 
 
 
-function drawFace(posX, posY,faceWidth, angle, colorName){
+function drawFace(posX, posY, angle, scaleNum, colorName){
 	push(); //push save the syles and the coordinates state
 		//head
-		var scaleNum = faceWidth/100;
+	
 		translate(posX,posY);
 		scale( scaleNum );
 		rotate( radians(angle) );
+		fill(colorName);
 		ellipse(0, 0, 100,100);
 		//eye1
-		fill(colorName);
+		fill(255);
 		ellipse(12, -10, 10,10);
 		//eye2
 		ellipse(-12, -10, 10,10);

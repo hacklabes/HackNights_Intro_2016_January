@@ -11,6 +11,8 @@ function draw() {
 	//backgroud(RED,GREEN,BLUE)
   	background(255,255,255); //background color WHITE
 	drawGrid(0,0,0,1,255);
+	drawGrid(100,100,35, 0.5,255);
+
 }
 
 
@@ -20,15 +22,16 @@ function drawGrid(posX, posY, angle, vScale, color){
 	var stepY = height/size;  //step for Y
 	
 	
-	fill(255-color);
-	rect(posX, posY,55,145);
-	fill(color);
-	ellipse(posX, posY, 100,50 );
+
 	
 	push(); //push save the syles and the coordinates state
 		translate(posX,posY);
 		rotate(radians(angle));
 		scale(vScale);
+		fill(255-color);
+	rect(0, 0,55,145);
+	fill(color);
+	ellipse(0, 0, 100,50 );
 		var x = 0;
 		strokeWeight(2);
 		while(x <= width){
