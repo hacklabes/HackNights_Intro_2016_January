@@ -7,7 +7,9 @@ function setup() {
 	var myCanvas = createCanvas(windowWidth, windowHeight);
 	myCanvas.parent('myCanvas');
 	frameRate(24);
-	
+	textFont("Helvetica");
+	textSize(20);
+
 }
 
 function draw() {
@@ -57,6 +59,12 @@ function draw() {
 		pop();
 		count = count + 8;
 	}
+	
+	fill(255,0,0);
+	
+	text("r - rotate\nn - fixed pattern\nm - mouse pattern ", 12, 60);
+	
+	
 	
 }
 
