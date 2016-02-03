@@ -1,24 +1,41 @@
 
 var countAnimation = 0;
+var enableSound = false;
+var step = 10;
+var osc;
+
+
 function setup() {
 	var myCanvas = createCanvas(windowWidth, windowHeight);
 	myCanvas.parent('myCanvas');
 	frameRate(24);
 	textFont("Helvetica");
 	textSize(20);
+	
+	
+	//crazy sound functions, 
+	osc = new p5.SinOsc(); 
+	osc.amp(.5);
 
 }
 
 function draw() {
-	countAnimation = countAnimation + 10;
-	if(countAnimation > 360){
-		countAnimation = 0;
+	countAnimation = countAnimation + step;
+	if(countAnimation > 360 || countAnimation < 0){
+		step = -step;
 	}
+
+	
   	background(255,255,255); //background color WHITE
-	drawFace(mouseX,mouseY, countAnimation, countAnimation/360);
+	drawFace(mouseX,mouseY, countAnimation,countAnimation/360);
 	
 	fill(255,0,0);
 	text(countAnimation, 10,50);
+	
+	if(enableSound){
+    	var freqValue = midiToFreq(countAnimation);
+    	osc.freq(freqValue);		
+	}
 	
 }
 
@@ -45,7 +62,13 @@ function drawFace(posX, posY, angle, scaleNum){
 }
 
 function keyTyped(){
-	if(key === 'n'){// if you press space go to next patern
+	if(key === 's'){// if you press space go to next patern
+		enableSound = !enableSound;
+		if(enableSound === true){
+			osc.start();
+		}else{
+			osc.stop();
+		}
 	}
 }
 
