@@ -57,7 +57,7 @@ function draw() {
 				triangle(count/2, count*sqrt(3)/6, -count/2, count*sqrt(3)/6, 0, -count*sqrt(3)/3);
 			}
 		pop();
-		count = count + 8;
+		count = count + 10;
 	}
 	
 	fill(255,0,0);
@@ -82,4 +82,6 @@ function keyTyped(){
 
 function windowResized() {
   resizeCanvas(windowWidth, windowHeight);
+  fill(255,0,0); 	
+ text(windowWidth , 12, windowHeight - 100);
 }
