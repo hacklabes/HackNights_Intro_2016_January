@@ -22,7 +22,7 @@ function setup() {
 function draw() {
 	countAnimation = countAnimation + step;
 	if(countAnimation > 360 || countAnimation < 0){
-		step = -step;
+		step = -step*1.5;
 	}
 
 	

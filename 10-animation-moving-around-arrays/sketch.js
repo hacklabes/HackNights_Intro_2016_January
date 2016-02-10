@@ -15,28 +15,29 @@ function setup() {
 	textFont("Helvetica");
 	textSize(20);
 	
-	for(var count = 0; count < NUM; count++){
-		posX.push(random(width));
-		posY.push(random(height));
-		stepX.push(10);
-		stepY.push(10);
+	for(var p = 0; p < NUM; p++){
+		posX.push(random(0,width));
+		posY.push(random(0,height));
+		stepX.push(5);
+		stepY.push(5);
 	}
 }
 
 function draw() {
+	background(255,255,255); //background color WHITE
+
 	for(var p = 0; p < NUM; p++){
-		
 		posX[p] = posX[p] + stepX[p];
 		if(posX[p] > windowWidth){
 			stepX[p] = -stepX[p];
 			posX[p] = windowWidth;
 		}
 		if(posX[p] < 0){
-			stepX[p] = -stepX;
+			stepX[p] = -stepX[p];
 			posX[p] = 0;
 		}
 		posY[p] = posY[p] + stepY[p];
-		if(posY > windowHeight){
+		if(posY[p] > windowHeight){
 			stepY[p] = -stepY[p];
 			posY[p] = windowHeight;
 		}
@@ -44,9 +45,7 @@ function draw() {
 			stepY[p] = -stepY[p];
 			posY[p] = 0;
 		}
-
-		background(255,255,255); //background color WHITE
-		drawFace(posX[p],posY[p], 0,1);
+		drawFace(posX[p],posY[p], 0,0.5+p/NUM);
 	}
 	
 }
