@@ -1,10 +1,12 @@
 
 var enableSound = false;
-var stepX = 10;
-var stepY = 10;
-var posX = 0;
-var posY = 0;
 
+var NUM = 10;
+
+var posX = [];
+var posY = [];
+var stepX = [];
+var stepY = [];
 
 function setup() {
 	var myCanvas = createCanvas(windowWidth, windowHeight);
@@ -13,36 +15,39 @@ function setup() {
 	textFont("Helvetica");
 	textSize(20);
 	
-
+	for(var count = 0; count < NUM; count++){
+		posX.push(random(width));
+		posY.push(random(height));
+		stepX.push(10);
+		stepY.push(10);
+	}
 }
 
 function draw() {
-	posX = posX + stepX;
-	if(posX > windowWidth){
-		stepX = -stepX;
-		posX = windowWidth;
-	}
-	if(posX < 0){
-		stepX = -stepX;
-		posX = 0;
-	}
-	posY = posY + stepY;
-	if(posY > windowHeight){
-		stepY = -stepY;
-		posY = windowHeight;
-	}
-	if(posY < 0){
-		stepY = -stepY;
-		posY = 0;
-	}
-	
-  	background(255,255,255); //background color WHITE
-	drawFace(posX,posY, 0,1);
-	
-	fill(255,0,0);
-	text("posX: " + posX, 10,50);
-	text("posY: " + posY, 10,70);
+	for(var p = 0; p < NUM; p++){
+		
+		posX[p] = posX[p] + stepX[p];
+		if(posX[p] > windowWidth){
+			stepX[p] = -stepX[p];
+			posX[p] = windowWidth;
+		}
+		if(posX[p] < 0){
+			stepX[p] = -stepX;
+			posX[p] = 0;
+		}
+		posY[p] = posY[p] + stepY[p];
+		if(posY > windowHeight){
+			stepY[p] = -stepY[p];
+			posY[p] = windowHeight;
+		}
+		if(posY[p] < 0){
+			stepY[p] = -stepY[p];
+			posY[p] = 0;
+		}
 
+		background(255,255,255); //background color WHITE
+		drawFace(posX[p],posY[p], 0,1);
+	}
 	
 }
 
