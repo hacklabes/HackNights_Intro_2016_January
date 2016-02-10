@@ -18,8 +18,8 @@ function setup() {
 	for(var p = 0; p < NUM; p++){
 		posX.push(random(0,width));
 		posY.push(random(0,height));
-		stepX.push(5);
-		stepY.push(5);
+		stepX.push(1+random(-5,5));
+		stepY.push(1+random(-5,5));
 	}
 }
 
@@ -45,7 +45,7 @@ function draw() {
 			stepY[p] = -stepY[p];
 			posY[p] = 0;
 		}
-		drawFace(posX[p],posY[p], 0,0.5+p/NUM);
+		drawFace(posX[p],posY[p], 0,0.5+1-p/NUM);
 	}
 	
 }
