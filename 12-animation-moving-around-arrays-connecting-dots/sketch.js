@@ -1,11 +1,10 @@
 
 var enableSound = false;
 
-var NUM = 10;
+var NUM = 100;
 
 var posX = [];
 var posY = [];
-var diam = [];
 var stepX = [];
 var stepY = [];
 
@@ -21,7 +20,6 @@ function setup() {
 		posY.push(random(0,height));
 		stepX.push(1+random(-5,5));
 		stepY.push(1+random(-5,5));
-		diam.push(0.5 + random(0,1));
 	}
 }
 
@@ -47,43 +45,26 @@ function draw() {
 			stepY[p] = -stepY[p];
 			posY[p] = 0;
 		}
-		drawFace(posX[p],posY[p],0, diam[p]);
+		push();
+		noFill();
+		for(var p2 = 0; p2 < NUM; p2++){
+			if(p !== p2){
+				if( dist(posX[p], posY[p], posX[p2], posY[p2]) < 150){
+					strokeWeight(0.5);
+					//ellipseMode(CORNERS); 
+					//ellipse(posX[p], posY[p], posX[p2], posY[p2])
+					line(posX[p], posY[p], posX[p2], posY[p2]);	
+				}
+			}
+		}
+		pop();
+		fill(0);
+		ellipse(posX[p],posY[p],10,10);
 	}
 	
 }
 
 
-
-function drawFace(posX, posY, angle, scaleNum){
-	push(); //push save the syles and the coordinates state
-		//head
-		translate(posX,posY);
-		scale( scaleNum );
-		rotate( radians(angle) );
-		ellipse(0, 0, 100,100);
-		//eye1
-		fill(0);
-		ellipse(12, -10, 10,10);
-		//eye2
-		ellipse(-12, -10, 10,10);
-		noFill();
-		//arc needs
-		//position, width, height, angle start, angle end
-		arc(0, 0, 50, 50, radians(30), radians(150));
-	pop(); // brings back the syle and the coodinates state
-
-}
-
-function keyTyped(){
-	if(key === 's'){// if you press space go to next patern
-		enableSound = !enableSound;
-		if(enableSound === true){
-			osc.start();
-		}else{
-			osc.stop();
-		}
-	}
-}
 
 function windowResized() {
   resizeCanvas(windowWidth, windowHeight);
